@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.dovar.dtoast"
+        minSdkVersion 19
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode project.ext.versionCode
+        versionName project.ext.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation "com.android.support:appcompat-v7:${project.ext.supportToolsVersion}"
+    implementation project(':library')
+}
